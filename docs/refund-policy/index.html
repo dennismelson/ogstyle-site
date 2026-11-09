@@ -99,12 +99,12 @@
         The app shows the deadline as a clock time, for example
         <em>“Cancel before 4:30 PM for a full refund”</em>. You see it on the booking screen before
         you pay, and in the booking's details afterwards.
-        <!-- PENDING-DECISION (POLICY-FACTS PF-4): the deadline is computed from
-             the shop's CURRENT setting, so a shop that lengthens its window
-             after you book moves your deadline earlier. Once the deadline is
-             snapshotted on the booking, add: "The deadline shown when you book
-             is the one that applies to that booking, even if the shop later
-             changes its setting." Do not add it before the code does that. -->
+      </p>
+      <p>
+        <!-- PF-4: the window is snapshotted on the booking (NOT NULL since
+             2026-11-09), so this holds for every booking. -->
+        <strong>The deadline shown when you book is the one that applies to that booking</strong>,
+        even if the shop later changes its setting.
       </p>
 
       <h2 id="when">3. When the advance is refunded</h2>
