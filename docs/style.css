@@ -143,6 +143,12 @@ li + li {
   margin-top: 0.375rem;
 }
 
+/* Inline link rows: the list spacing above must not offset flex items. */
+.hero-links li + li,
+.site-footer nav li + li {
+  margin-top: 0;
+}
+
 a {
   color: var(--accent);
   text-underline-offset: 0.18em;
@@ -282,7 +288,8 @@ address {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .hero h1 {
