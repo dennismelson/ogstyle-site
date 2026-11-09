@@ -1,0 +1,373 @@
+/*
+ * OGSTYLE document site. Legibility first: one column, system fonts, no
+ * third-party requests (the privacy page should not hand a visitor's IP to a
+ * font CDN). Colours take their cue from the app's tokens (mobile/src/theme/
+ * tokens.ts — brass on near-black), lightened for reading by default and
+ * following the phone into dark mode.
+ */
+:root {
+  --bg: #faf8f4;
+  --surface: #ffffff;
+  --text: #1a2126;
+  --muted: #4a5560;
+  --rule: #e4ded2;
+  --accent: #7a5512; /* brassDeep, darkened: 6.4:1 on --bg */
+  --accent-soft: #f3ead8;
+  --mark: #fff1c2;
+  --mark-text: #5c3d00;
+  --measure: 40rem;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12171a; /* tokens.base */
+    --surface: #1a2126; /* tokens.baseRaised */
+    --text: #f3f5f6; /* tokens.textPrimary */
+    --muted: #b4bec7;
+    --rule: #2a3339;
+    --accent: #efc578; /* tokens.brassBright */
+    --accent-soft: #2a2416;
+    --mark: #4a3a10;
+    --mark-text: #ffe7a8;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ── header / footer ─────────────────────────────────────────────── */
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.5rem;
+}
+
+.wordmark {
+  font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, 'Noto Serif', serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: 1.25rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.wordmark span {
+  color: var(--accent);
+}
+
+.site-footer {
+  margin-top: 4rem;
+  border-top: 1px solid var(--rule);
+  padding: 2rem 0 3rem;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.site-footer nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.site-footer p {
+  margin: 0.25rem 0;
+}
+
+/* ── type ───────────────────────────────────────────────────────── */
+
+h1,
+h2,
+h3 {
+  font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, 'Noto Serif', serif;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 2.5rem 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.375rem;
+  margin: 2.5rem 0 0.5rem;
+  padding-top: 0.5rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+  margin: 1.75rem 0 0.25rem;
+}
+
+p,
+ul,
+ol {
+  margin: 0.75rem 0;
+}
+
+li + li {
+  margin-top: 0.375rem;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.18em;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+strong {
+  font-weight: 650;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  margin-top: 0;
+}
+
+/* A value still to be filled in before launch. Loud on purpose: a
+   placeholder must never reach Razorpay's reviewer unnoticed. */
+.fill {
+  background: var(--mark);
+  color: var(--mark-text);
+  padding: 0 0.25em;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+/* ── blocks ─────────────────────────────────────────────────────── */
+
+.summary {
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.summary ul {
+  padding-left: 1.1rem;
+}
+
+.toc {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+  font-size: 0.9375rem;
+}
+
+.toc ol {
+  margin: 0.25rem 0;
+  padding-left: 1.25rem;
+}
+
+/* Tables collapse to stacked cards on a phone instead of scrolling sideways. */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9875rem;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.625rem 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+thead th {
+  border-bottom: 2px solid var(--text);
+}
+
+@media (max-width: 34rem) {
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+  }
+  thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  tr {
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.75rem;
+    background: var(--surface);
+  }
+  td {
+    border: 0;
+    padding: 0.25rem 0;
+  }
+  td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0.25rem;
+  padding-top: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+/* ── landing ────────────────────────────────────────────────────── */
+
+.hero {
+  min-height: calc(100vh - 3.5rem - 1px);
+  min-height: calc(100svh - 3.5rem - 1px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 11vw, 4rem);
+  letter-spacing: 0.04em;
+  margin: 0 0 0.75rem;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.lede {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+  max-width: 32rem;
+}
+
+.steps {
+  padding-left: 1.25rem;
+  margin: 0 0 2rem;
+  color: var(--muted);
+}
+
+.store-button {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.125rem;
+  background: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 650;
+  min-height: 3rem;
+  align-self: flex-start;
+}
+
+.store-button small {
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.hero-links {
+  list-style: none;
+  padding: 0;
+  margin: 2.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.9375rem;
+}
+
+.hero-links a {
+  display: inline-block;
+  padding: 0.375rem 0; /* ≥ 44 px tap height with line-height */
+}
+
+.legal-line {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+}
+
+/* ── print ──────────────────────────────────────────────────────── */
+
+@media print {
+  :root {
+    --bg: #fff;
+    --text: #000;
+    --muted: #333;
+    --accent: #000;
+  }
+  .site-header nav,
+  .toc {
+    display: none;
+  }
+  a[href^='http']::after,
+  a[href^='mailto']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.85em;
+  }
+  h2 {
+    break-after: avoid;
+  }
+}
