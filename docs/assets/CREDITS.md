@@ -11,8 +11,8 @@ seed fixtures.
 - Location was mocked to Kanyakumari town (8.0883, 77.5385). The screens
   profile adds three fictional demo shops there (Cape Gents Hair Studio, Lotus
   Ladies Beauty Parlour, Sea Breeze Unisex Salon).
-- Every shop uses the platform's default 10% advance (₹680 → ₹68 online). Small
-  bookings show the ₹29 minimum advance.
+- Every shop uses the new-shop defaults: a 10% advance (₹680 → ₹68 online,
+  ₹150 → ₹15) with a ₹10 minimum.
 - `07-review.webp`: the coupon field's placeholder text ("e.g. FLAT100", app
   copy that names a seed coupon code) was blanked in the image. The field
   itself is unchanged.
