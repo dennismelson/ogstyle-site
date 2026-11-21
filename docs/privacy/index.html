@@ -28,7 +28,11 @@
 
     <main class="wrap">
       <h1>Privacy Policy</h1>
-      <p class="meta">Version 1.0 · Effective 10 November 2026</p>
+      <!-- FILL-IN: v1.1 takes effect the day phone sign-in through Firebase serves
+           real users (trim-time OTP_PROVIDER=firebase; DECISIONS 2026-11-21). Set the
+           date and merge this branch that day, not before: until then the server sends
+           and checks the codes, as v1.0 says. -->
+      <p class="meta">Version 1.1 · Effective <span class="fill">[EFFECTIVE DATE]</span></p>
 
       <p>
         This policy explains what personal data the OGSTYLE app and this website collect, why, who
@@ -78,9 +82,12 @@
       <ul>
         <li>
           <!-- PF-20 -->
-          <strong>Your mobile number.</strong> This is how you sign in. We send a one-time code to
-          it. The code is stored only in scrambled (hashed) form and expires within minutes.
-          <!-- PF-24 -->
+          <strong>Your mobile number.</strong> This is how you sign in. A one-time code is sent
+          to it by SMS and checked on your phone by Google's Firebase Authentication service.
+          <!-- PF-24 (v1.1): Firebase sends and checks the code; the server only verifies
+               Google's signed confirmation. -->
+          We never see or store the code: we receive only Google's confirmation that you
+          control the number.
         </li>
         <li>
           <!-- PF-20 -->
@@ -203,11 +210,14 @@
                decision (README blocker 9) and name what production uses. -->
         </li>
         <li>
-          <!-- PF-30 -->
-          <strong>Sign-in codes</strong> will be sent by SMS through a provider we will name
-          here before SMS sign-in starts.
-          <!-- PF-30: no SMS provider is live — the DLT entity registration was
-               rejected 2026-11-10 (README blocker 9). Name it here first. -->
+          <!-- PF-30 (v1.1) -->
+          <strong>Google (Firebase Authentication)</strong> sends your sign-in code by SMS and
+          checks it. To do this Google receives your mobile number and keeps a sign-in record
+          for it in our Firebase project.
+          <!-- PF-30: if sign-in moves to MSG91 after DLT registration, name MSG91 here
+               and bump the version in the same change. -->
+          <!-- LAWYER: Google may process this outside India; confirm the cross-border
+               wording in the transfers section covers Firebase Authentication. -->
         </li>
         <li>
           <!-- PF-27 -->
@@ -258,7 +268,10 @@
       <p>
         <!-- PF-25 -->
         Within 7 working days we will close your account and sign you
-        out on every device. You will no longer be able to sign in with it.
+        out on every device. You will no longer be able to sign in with it. We also delete
+        the sign-in record Google keeps for your number in our Firebase project.
+        <!-- PF-25 (v1.1): an ongoing obligation, done by hand in the Firebase console
+             until in-app deletion exists (POLICY-FACTS "Ongoing obligations"). -->
       </p>
       <p>
         <!-- PF-25 -->
