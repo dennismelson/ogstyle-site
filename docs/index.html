@@ -3,40 +3,495 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>OGSTYLE — book barbers and salons in Kanyakumari district</title>
+    <title>OGSTYLE — book barbers and salons in Nagercoil &amp; Kanyakumari</title>
     <meta
       name="description"
-      content="Book barbershops and salons in Nagercoil and Kanyakumari. Pay a small advance online and the rest at the shop."
+      content="Book barbershops and salons in Nagercoil and Kanyakumari, for men and women. See live slots, pick your stylist, pay a small advance online and the rest at the chair."
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="canonical" href="https://ogstyle.app/" />
+    <meta name="theme-color" content="#0B0E10" />
+    <meta name="color-scheme" content="dark" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="OGSTYLE" />
+    <meta property="og:url" content="https://ogstyle.app/" />
+    <meta property="og:title" content="OGSTYLE — skip the wait, book the chair" />
+    <meta
+      property="og:description"
+      content="Barbershops and salons in Nagercoil and Kanyakumari. Live slots, your choice of stylist, a small advance online and the rest at the chair."
+    />
+    <meta property="og:image" content="https://ogstyle.app/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="OGSTYLE: skip the wait, book the chair. Nagercoil and Kanyakumari." />
+    <meta property="og:locale" content="en_IN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OGSTYLE — skip the wait, book the chair" />
+    <meta
+      name="twitter:description"
+      content="Barbershops and salons in Nagercoil and Kanyakumari. Live slots, a small advance online, the rest at the chair."
+    />
+    <meta name="twitter:image" content="https://ogstyle.app/assets/og.png" />
+
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="preload" href="fonts/bodoni-moda-600.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/archivo-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="landing.css" />
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="landing.js" defer></script>
   </head>
   <body>
-    <main class="wrap hero">
-      <h1>OG<span>STYLE</span></h1>
-      <p class="lede">
-        Book your chair at barbershops and salons in Nagercoil and Kanyakumari, for men and women.
-      </p>
-      <ol class="steps">
-        <li>Pick a shop, your services and a time.</li>
-        <li>Pay a small booking advance online.</li>
-        <li>Pay the rest at the shop, in cash or UPI.</li>
-      </ol>
+    <!-- Icons: Lucide (https://lucide.dev), ISC licence, copied as inline symbols. -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
+      <symbol id="i-rupee" viewBox="0 0 24 24"><path d="M6 3h12"/><path d="M6 8h12"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.510 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-user-check" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></symbol>
+      <symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.420 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r="1"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M4.5 2.8 14.2 12l-9.7 9.2c-.4-.2-.7-.7-.7-1.3V4.1c0-.6.3-1.1.7-1.3Z" fill="currentColor" stroke="none" opacity=".85"/><path d="m17.3 8.9-3.1 3.1 3.1 3.1 3.4-1.9c.9-.5.9-1.9 0-2.4Z" fill="currentColor" stroke="none"/><path d="M4.5 2.8c.3-.2.8-.2 1.2 0l11.6 6.1-3.1 3.1Zm0 18.4 9.7-9.2 3.1 3.1-11.6 6.1c-.4.2-.9.2-1.2 0Z" fill="currentColor" stroke="none" opacity=".65"/></symbol>
+    </svg>
 
-      <!-- FILL-IN: replace href with the Play Store listing URL once it exists,
-           and delete the "Coming soon" line. -->
-      <a class="store-button" href="#play-store-coming-soon" id="play-store-coming-soon">
-        Get it on Google Play
-        <small>Coming soon</small>
-      </a>
+    <a class="skip" href="#main">Skip to content</a>
 
-      <ul class="hero-links">
-        <li><a href="terms/">Terms of Service</a></li>
-        <li><a href="privacy/">Privacy Policy</a></li>
-        <li><a href="refund-policy/">Refund &amp; Cancellation</a></li>
-        <li><a href="contact/">Contact Us</a></li>
-      </ul>
-      <p class="legal-line">OGSTYLE is a trade name of Sahaya Dennis Melson, sole proprietor.</p>
+    <header class="nav" id="top">
+      <div class="nav__inner container">
+        <a class="logo" href="#top" aria-label="OGSTYLE home">OG<span>STYLE</span></a>
+        <nav class="nav__links" id="nav-menu" aria-label="Main">
+          <a href="#how">How it works</a>
+          <a href="#customers">For customers</a>
+          <a href="#owners">For shop owners</a>
+          <a href="#screens">Screens</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <a class="btn btn--brass btn--sm nav__cta" href="#get">Get the app</a>
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Menu"
+        >
+          <svg class="icon icon--open" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon--close" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="aurora" aria-hidden="true">
+          <span class="aurora__a"></span>
+          <span class="aurora__b"></span>
+          <span class="aurora__c"></span>
+        </div>
+        <div class="hero__inner container">
+          <div class="hero__copy">
+            <p class="eyebrow hero__line" style="--d: 0">
+              <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+              Nagercoil &amp; Kanyakumari
+            </p>
+            <h1 class="hero__title" id="hero-title">
+              <span class="hero__line" style="--d: 1">Skip the wait.</span>
+              <span class="hero__line grad" style="--d: 2">Book the chair.</span>
+            </h1>
+            <p class="lede hero__line" style="--d: 3">
+              Barbershops and salons for men and women. See the slots that are really free, pick
+              your stylist, pay a small advance and the rest at the chair.
+            </p>
+            <!-- REVIEW: Tamil line. Owner's wording (2026-11-21), keep this marker until
+                 checked. Meaning: "Your time, your style." -->
+            <p class="tamil hero__line" lang="ta" style="--d: 4">உங்கள் நேரம், உங்கள் ஸ்டைல்.</p>
+            <div class="hero__ctas hero__line" style="--d: 5">
+              <!-- FILL-IN: replace href with the Play Store listing URL once it exists,
+                   and change "Coming soon to" to "Get it on". -->
+              <a class="store" href="#get">
+                <svg class="store__logo" aria-hidden="true"><use href="#i-play"/></svg>
+                <span class="store__text">
+                  <small>Coming soon to</small>
+                  <strong>Google Play</strong>
+                </span>
+              </a>
+              <a class="btn btn--ghost" href="#owners">For shop owners</a>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <div class="phone-glow" aria-hidden="true"></div>
+            <figure class="phone" data-parallax>
+              <img
+                src="assets/screens/02-home.webp"
+                width="540"
+                height="1200"
+                alt="The OGSTYLE home screen in Kanyakumari: a greeting, a search box and the barbershops and salons nearest you."
+                fetchpriority="high"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="section" id="how" aria-labelledby="how-title">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow">How it works</p>
+            <h2 id="how-title">Three steps to your seat</h2>
+          </header>
+          <ol class="grid grid--3">
+            <li class="card glass reveal" style="--i: 0">
+              <span class="card__num" aria-hidden="true">01</span>
+              <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></span>
+              <h3>Find a shop</h3>
+              <p>Browse barbershops and salons near you in Nagercoil and Kanyakumari.</p>
+            </li>
+            <li class="card glass reveal" style="--i: 1">
+              <span class="card__num" aria-hidden="true">02</span>
+              <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+              <h3>Pick service, stylist &amp; time</h3>
+              <p>Choose what you want done, who does it, and a slot that is actually free.</p>
+            </li>
+            <li class="card glass reveal" style="--i: 2">
+              <span class="card__num" aria-hidden="true">03</span>
+              <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-rupee"/></svg></span>
+              <h3>Pay a small advance</h3>
+              <p>Pay the advance online to confirm. Pay the rest at the chair, in cash or UPI.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- FOR CUSTOMERS -->
+      <section class="section" id="customers" aria-labelledby="customers-title">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow">For customers</p>
+            <h2 id="customers-title">Your time, <span class="grad">respected</span></h2>
+            <p class="section__lede">Everything you need to walk in and sit straight down.</p>
+          </header>
+          <ul class="grid grid--3">
+            <li class="card glass reveal" style="--i: 0">
+              <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+              <h3>Real-time slots</h3>
+              <p>See the times each stylist is actually free, right now.</p>
+            </li>
+            <li class="card glass reveal" style="--i: 1">
+              <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+              <h3>No double bookings</h3>
+              <p>Once a slot is yours, nobody else can take it.</p>
+            </li>
+            <li class="card glass reveal" style="--i: 2">
+              <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-user-check"/></svg></span>
+              <h3>Choose your stylist</h3>
+              <p>Book the person you trust, or take whoever is free first.</p>
+            </li>
+            <li class="card glass reveal" style="--i: 3">
+              <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span>
+              <h3>Add-ons</h3>
+              <p>Add the extras a shop offers to your booking in a tap.</p>
+            </li>
+            <li class="card glass reveal" style="--i: 4">
+              <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg></span>
+              <h3>Offers &amp; coupons</h3>
+              <p>Shop offers apply automatically. Have a coupon? Add it before you pay.</p>
+            </li>
+            <li class="card glass reveal" style="--i: 5">
+              <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg></span>
+              <h3>Reminders</h3>
+              <p>A nudge 2 hours before your appointment, and again at 30 minutes.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- FOR SHOP OWNERS -->
+      <section class="section owners" id="owners" aria-labelledby="owners-title">
+        <div class="container owners__inner">
+          <div class="owners__copy">
+            <header class="section__head section__head--left reveal">
+              <p class="eyebrow">For shop owners</p>
+              <h2 id="owners-title">Run every chair from your phone</h2>
+              <p class="section__lede">
+                Bookings, staff and prices in one place. Your chairs stay full and your customers
+                stop waiting at the door.
+              </p>
+            </header>
+            <ul class="owner-list">
+              <li class="reveal" style="--i: 0">
+                <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+                <div>
+                  <h3>Multi-staff schedules</h3>
+                  <p>Every stylist has their own hours and their own bookings.</p>
+                </div>
+              </li>
+              <li class="reveal" style="--i: 1">
+                <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+                <div>
+                  <h3>Multiple shops, co-owners</h3>
+                  <p>Run more than one shop, and share a shop with a partner.</p>
+                </div>
+              </li>
+              <li class="reveal" style="--i: 2">
+                <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-scissors"/></svg></span>
+                <div>
+                  <h3>Services, add-ons &amp; discounts</h3>
+                  <p>Set your menu, your prices and your offers. Change them any time.</p>
+                </div>
+              </li>
+            </ul>
+            <div class="money glass reveal">
+              <p class="money__title">No upfront fees. OGSTYLE earns only from the small advance customers pay online.</p>
+              <p>
+                <!-- PF-1: the platform default (Shop.commissionPercent 10, min ₹29, max ₹199,
+                     never more than 25% of the total). Change this if a shop's rate differs. -->
+                Customers pay 10% of the booking online when they book. Small bookings have a
+                minimum of up to ₹29, and the advance never goes above ₹199. They pay you the
+                rest at the chair, in cash or UPI.
+              </p>
+            </div>
+          </div>
+          <div class="owners__visual reveal">
+            <figure class="phone phone--tilt">
+              <img
+                src="assets/screens/08-owner-dashboard.webp"
+                width="540"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="The shop owner's dashboard: today's bookings, money to collect at the shop, each barber's booked time and the next appointments."
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREENSHOTS: the real app, seeded demo data only (assets/screens/). -->
+      <section class="section" id="screens" aria-labelledby="screens-title">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow">Inside the app</p>
+            <h2 id="screens-title">A look around</h2>
+          </header>
+          <div class="carousel reveal" role="region" aria-roledescription="carousel" aria-labelledby="screens-title">
+            <ul class="carousel__track" id="screens-track" tabindex="0" aria-label="App screenshots. Scroll sideways or use the arrow buttons.">
+              <li class="shot" aria-roledescription="slide" aria-label="1 of 8">
+                <img src="assets/screens/03-explore.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Explore: barbershops and salons near you, sorted by distance, with prices and opening status." />
+                <p>Explore shops</p>
+              </li>
+              <li class="shot" aria-roledescription="slide" aria-label="2 of 8">
+                <img src="assets/screens/04-shop.webp" width="540" height="1200" loading="lazy" decoding="async" alt="A salon's page with its services and prices." />
+                <p>Services &amp; prices</p>
+              </li>
+              <li class="shot" aria-roledescription="slide" aria-label="3 of 8">
+                <img src="assets/screens/05-addons.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Choosing add-ons for a booking." />
+                <p>Add extras</p>
+              </li>
+              <li class="shot" aria-roledescription="slide" aria-label="4 of 8">
+                <img src="assets/screens/06-choose-time.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Choosing a stylist and a free time, with the advance and the cancellation deadline shown." />
+                <p>Stylist &amp; time</p>
+              </li>
+              <li class="shot" aria-roledescription="slide" aria-label="5 of 8">
+                <img src="assets/screens/07-review.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Reviewing the booking: the services, the total, the advance paid now and the amount paid at the shop." />
+                <p>Review &amp; pay</p>
+              </li>
+              <li class="shot" aria-roledescription="slide" aria-label="6 of 8">
+                <img src="assets/screens/02-home.webp" width="540" height="1200" loading="lazy" decoding="async" alt="The home screen with nearby shops." />
+                <p>Home</p>
+              </li>
+              <li class="shot" aria-roledescription="slide" aria-label="7 of 8">
+                <img src="assets/screens/08-owner-dashboard.webp" width="540" height="1200" loading="lazy" decoding="async" alt="The shop owner's dashboard." />
+                <p>Owner dashboard</p>
+              </li>
+              <li class="shot" aria-roledescription="slide" aria-label="8 of 8">
+                <img src="assets/screens/09-owner-manage.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Managing a shop: details, hours, services, staff and offers." />
+                <p>Manage your shop</p>
+              </li>
+            </ul>
+            <div class="carousel__controls">
+              <button class="carousel__btn" type="button" data-dir="-1" aria-controls="screens-track" aria-label="Previous screens">
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+              </button>
+              <button class="carousel__btn" type="button" data-dir="1" aria-controls="screens-track" aria-label="Next screens">
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ. Refund answers are worded from POLICY-FACTS (trim-time docs/POLICY-FACTS.md)
+           and carry the same PF tags as refund-policy/. Change them together (hard rule 13). -->
+      <section class="section" id="faq" aria-labelledby="faq-title">
+        <div class="container container--narrow">
+          <header class="section__head reveal">
+            <p class="eyebrow">FAQ</p>
+            <h2 id="faq-title">Good questions</h2>
+          </header>
+          <div class="faq">
+            <details class="glass reveal">
+              <summary>How much do I pay online?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="faq__body">
+                <!-- PF-1 -->
+                <p>A small booking advance: a percentage of your booking total, with a minimum and a maximum, set for each shop. You see the exact amount before you pay.</p>
+                <!-- PF-2 -->
+                <p>You pay the rest directly to the shop when you visit, in cash or UPI.</p>
+              </div>
+            </details>
+            <details class="glass reveal">
+              <summary>Does every shop ask for an advance?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="faq__body">
+                <!-- PF-3 -->
+                <p>Not always. Some shops may not ask for one. Then nothing is paid online and you pay everything at the shop.</p>
+              </div>
+            </details>
+            <details class="glass reveal">
+              <summary>Can I cancel and get my advance back?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="faq__body">
+                <!-- PF-4 -->
+                <p>Yes, before your booking's cancellation deadline. Each shop sets it; if the shop hasn't, it is 2 hours before the appointment. The app shows it as a clock time before you pay, and the deadline shown when you book is the one that applies to that booking.</p>
+                <!-- PF-5 -->
+                <p>Cancel before it and your whole advance is refunded. We don't deduct gateway charges.</p>
+                <!-- PF-6 -->
+                <p>After the deadline you can't cancel or change the booking, and the advance is not refunded.</p>
+              </div>
+            </details>
+            <details class="glass reveal">
+              <summary>Can I change the time or stylist?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="faq__body">
+                <!-- PF-11 -->
+                <p>Yes, free, before the deadline. Move to another time or another stylist at the same shop. Your deadline then follows the new time.</p>
+              </div>
+            </details>
+            <details class="glass reveal">
+              <summary>What if the shop cancels?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="faq__body">
+                <!-- PF-8 -->
+                <p>You get your whole advance back, whenever they cancel.</p>
+              </div>
+            </details>
+            <details class="glass reveal">
+              <summary>What if I don't turn up?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="faq__body">
+                <!-- PF-7 -->
+                <p>The shop may mark the booking as a no-show, and the advance is not refunded.</p>
+                <!-- PF-10 -->
+                <p>A coupon on a cancelled booking is released for you to use again. On a no-show it stays used.</p>
+              </div>
+            </details>
+            <details class="glass reveal">
+              <summary>What happens while I'm paying?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="faq__body">
+                <!-- PF-9 -->
+                <p>Your slot is held for 10 minutes so nobody else can take it. If your payment completes after the hold has run out, it is refunded in full. You don't need to ask.</p>
+              </div>
+            </details>
+            <details class="glass reveal">
+              <summary>When will I get my refund?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="faq__body">
+                <!-- PF-12 -->
+                <p>We start your refund within 3 working days. Your bank usually credits it 5–7 working days after that. Nothing after 12 working days? Write to us.</p>
+                <!-- PF-13 -->
+                <p>Refunds go back to the way you paid, through Razorpay. OGSTYLE never sees your card, UPI or bank details.</p>
+              </div>
+            </details>
+            <details class="glass reveal">
+              <summary>How do shops get paid?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="faq__body">
+                <!-- PF-16 -->
+                <p>The advance you pay online is OGSTYLE's commission. The shop collects the rest of the price directly from you at the shop, in cash or UPI. OGSTYLE never holds or passes on the shop's money.</p>
+              </div>
+            </details>
+            <details class="glass reveal">
+              <summary>How do I delete my account?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="faq__body">
+                <!-- PF-25 -->
+                <p>Email <a href="mailto:support@ogstyle.app?subject=Delete%20my%20account">support@ogstyle.app</a> with the subject “Delete my account” and the mobile number you sign in with. We may ask you to confirm it from the app or with a code sent to that number.</p>
+                <!-- PF-25 -->
+                <p>Within 7 working days we close your account and sign you out on every device. Past bookings and payment records are kept as financial records for a set period, then deleted. The details are in our <a href="privacy/">Privacy Policy</a>.</p>
+              </div>
+            </details>
+            <details class="glass reveal">
+              <summary>Is the app in Tamil?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="faq__body">
+                <p>Yes. The app works in English and Tamil, and you can switch in settings.</p>
+              </div>
+            </details>
+            <details class="glass reveal">
+              <summary>Is there an iOS app?<svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <div class="faq__body">
+                <p>OGSTYLE is coming to Android first. An iPhone app is planned for later.</p>
+              </div>
+            </details>
+          </div>
+          <p class="faq__more reveal">
+            The full rules are in our <a href="refund-policy/">Refund &amp; Cancellation Policy</a>.
+          </p>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="section cta" id="get" aria-labelledby="get-title">
+        <div class="container">
+          <div class="cta__band glass reveal">
+            <h2 id="get-title">Your next cut, <span class="grad">already booked</span></h2>
+            <p class="section__lede">OGSTYLE is coming soon to Google Play, for Nagercoil and Kanyakumari.</p>
+            <div class="cta__row">
+              <!-- FILL-IN: replace href with the Play Store listing URL once it exists. -->
+              <a class="store" href="#get">
+                <svg class="store__logo" aria-hidden="true"><use href="#i-play"/></svg>
+                <span class="store__text">
+                  <small>Coming soon to</small>
+                  <strong>Google Play</strong>
+                </span>
+              </a>
+            </div>
+            <div class="cta__owners">
+              <h3>Own a barbershop or salon?</h3>
+              <p>Tell us about your shop and we'll help you set it up.</p>
+              <div class="cta__row">
+                <!-- FILL-IN: WhatsApp link, e.g. https://wa.me/91XXXXXXXXXX -->
+                <a class="btn btn--brass" href="#get">
+                  <svg class="icon" aria-hidden="true"><use href="#i-message"/></svg>
+                  WhatsApp <span class="fill">[WHATSAPP LINK]</span>
+                </a>
+                <a class="btn btn--ghost" href="mailto:support@ogstyle.app?subject=List%20my%20shop%20on%20OGSTYLE">
+                  <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                  support@ogstyle.app
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <a class="logo" href="#top" aria-label="OGSTYLE, back to top">OG<span>STYLE</span></a>
+        <nav aria-label="Policies">
+          <ul class="footer__links">
+            <li><a href="terms/">Terms of Service</a></li>
+            <li><a href="privacy/">Privacy Policy</a></li>
+            <li><a href="refund-policy/">Refund &amp; Cancellation</a></li>
+            <li><a href="contact/">Contact Us</a></li>
+          </ul>
+        </nav>
+        <p class="footer__legal">© 2026 OGSTYLE · a trade name of Sahaya Dennis Melson, sole proprietor · Kanyakumari</p>
+      </div>
+    </footer>
   </body>
 </html>
