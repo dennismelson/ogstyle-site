@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#12171A"/><text x="32" y="43" font-family="Georgia, serif" font-size="30" font-weight="700" text-anchor="middle" fill="#D8A64A">OG</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 240 240"><rect x="0" y="0" width="240" height="240" rx="48" fill="#12171A"></rect><g transform="translate(120 120) scale(1.12) translate(-124 -112)"><g transform="translate(-2,4)">
+<circle cx="86" cy="124" r="38" fill="#FFFFFF" fill-opacity="0.1"></circle>
+<circle cx="86" cy="124" r="43" fill="none" stroke="#F3F5F6" stroke-width="11"></circle>
+<path d="M198,104.7 A30,30 0 1,0 205,124 L185,124" fill="none" stroke="#D8A64A" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M196,46 C197.6,57 200,59.4 211,61 C200,62.6 197.6,65 196,76 C194.4,65 192,62.6 181,61 C192,59.4 194.4,57 196,46 Z" fill="#D8A64A"></path>
+</g></g></svg>

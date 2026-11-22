@@ -291,6 +291,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   margin-right: auto;
 }
 .logo span { color: var(--brass); }
+.logo img { display: block; height: 36px; width: auto; }
 .nav__links { display: none; }
 .nav__links a {
   color: var(--text-2);
@@ -474,6 +475,125 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .hero { padding: 72px 0 112px; }
   .hero__inner { grid-template-columns: 1.15fr 0.85fr; gap: 40px; }
   .phone { width: 320px; }
+}
+
+
+/* ---------- Hero scene: mirror bulbs + floating booking cards (as in the app) ---------- */
+.mirror {
+  position: absolute;
+  width: min(118vw, 540px);
+  aspect-ratio: 1;
+  pointer-events: none;
+}
+.mirror__bulbs {
+  width: 100%;
+  height: 100%;
+  animation: turn 60s linear infinite;
+}
+@keyframes turn { to { transform: rotate(360deg); } }
+
+.fcard {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(22, 27, 31, 0.9);
+  border: 1px solid var(--glass-stroke);
+  border-top-color: var(--glass-highlight);
+  color: var(--text);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+  animation:
+    card-in 0.9s var(--ease) var(--in) both,
+    bob var(--float) ease-in-out calc(var(--in) + 0.9s) infinite alternate;
+}
+/* a brass sheen crossing each card now and then */
+.fcard::after {
+  content: '';
+  position: absolute;
+  inset: -40% auto -40% 0;
+  width: 70px;
+  background: linear-gradient(90deg, transparent, var(--brass-glow), transparent);
+  transform: translateX(-120px) rotate(15deg);
+  animation: sheen 6s ease-in-out calc(var(--in) + 1.5s) infinite;
+}
+@keyframes card-in {
+  from { opacity: 0; transform: translate3d(0, 26px, 0) rotate(var(--tilt)); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) rotate(var(--tilt)); }
+}
+@keyframes bob {
+  from { opacity: 1; transform: translate3d(0, 0, 0) rotate(var(--tilt)); }
+  to { opacity: 1; transform: translate3d(0, 12px, 0) rotate(var(--tilt)); }
+}
+@keyframes sheen {
+  0%, 70% { transform: translateX(-120px) rotate(15deg); }
+  100% { transform: translateX(320px) rotate(15deg); }
+}
+.fcard strong { display: block; font-weight: 600; font-size: 1rem; }
+.fcard small { display: flex; align-items: center; gap: 6px; color: var(--text-2); font-size: 0.8rem; }
+.fcard__icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: var(--brass-glow);
+  border: 1px solid var(--brass-deep);
+  color: var(--brass-bright);
+}
+.fcard .icon { width: 18px; height: 18px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: #4fb286; display: inline-block; }
+
+.fcard--shop { --tilt: 5deg; --in: 0.95s; --float: 4s; top: 9%; right: -6%; }
+.fcard--slots {
+  --tilt: -5deg; --in: 0.8s; --float: 3.5s;
+  top: 54%; left: -10%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.fcard--booked { --tilt: 0deg; --in: 1.15s; --float: 3s; bottom: 7%; left: 6%; }
+
+.chips { display: flex; gap: 6px; }
+.chips b {
+  padding: 6px 10px;
+  border-radius: 11px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-stroke);
+}
+.chips b.on {
+  background: var(--brass);
+  border-color: transparent;
+  color: #14100a;
+  animation: pop 0.5s cubic-bezier(0.34, 1.8, 0.64, 1) 2.1s both;
+}
+.tick {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #4fb286;
+  animation: pop 0.5s cubic-bezier(0.34, 1.8, 0.64, 1) 2.4s both;
+}
+.tick .icon { width: 13px; height: 13px; stroke-width: 2.6; }
+@keyframes pop {
+  from { opacity: 0.35; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 899px) {
+  .fcard { font-size: 0.8rem; padding: 10px 12px; }
+  .fcard--shop { right: 0; top: 4%; }
+  .fcard--slots { left: 0; }
+  .fcard--booked { left: 50%; margin-left: -100px; bottom: 2%; }
 }
 
 /* ---------- Sections ---------- */
@@ -713,4 +833,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     transition-delay: 0s !important;
   }
   .js .reveal { opacity: 1; transform: none; }
+  .fcard { opacity: 1; transform: rotate(var(--tilt)); }
+  .fcard::after { display: none; }
 }
