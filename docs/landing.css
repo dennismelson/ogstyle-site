@@ -601,6 +601,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   box-shadow: 0 24px 40px -24px rgba(0, 0, 0, 0.9);
 }
 .shot p { text-align: center; color: var(--text-2); font-size: 0.9375rem; }
+.carousel__note { text-align: center; color: var(--text-3); font-size: 0.875rem; margin-top: 4px; }
 .carousel__controls { display: flex; justify-content: center; gap: 12px; margin-top: 8px; }
 .carousel__btn {
   display: inline-grid;
