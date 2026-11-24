@@ -31,6 +31,9 @@
 
     <main class="wrap">
       <h1>Privacy Policy</h1>
+      <!-- DRAFT (Phase 15): publish only with the app build that ships profile photos and
+           in-app deletion. Version number and effective date to be set by the owner at
+           publish (a Firebase v1.1 is parked on policy/privacy-v1.1-firebase). -->
       <p class="meta">Version 1.0 · Effective 10 November 2026</p>
 
       <p>
@@ -92,9 +95,10 @@
         </li>
         <li>
           <!-- PF-20 -->
-          <strong>Optional:</strong> your email address, and whether you usually book men's or
-          women's services (used to show you relevant services first). You can leave these blank or
-          clear them in your profile.
+          <strong>Optional:</strong> your email address, a profile photo, and whether you usually
+          book men's or women's services (used to show you relevant services first). You can leave
+          these blank or remove them in your profile. A photo is shown only to you in the app; it
+          is resized on your phone before it is uploaded.
         </li>
         <li>
           <!-- PF-20 -->
@@ -201,8 +205,8 @@
         <li>
           <!-- PF-30 -->
           <strong>Our hosting providers</strong> store and run the service: Render
-          (application servers), Supabase (database, Mumbai region) and GitHub Pages (this
-          website).
+          (application servers), Supabase (database, Mumbai region), Cloudflare (profile photos,
+          if you add one) and GitHub Pages (this website).
           <!-- PF-30: true of the dev server today. Revisit at the production
                decision (README blocker 9) and name what production uses. -->
         </li>
@@ -253,24 +257,32 @@
       <h2 id="delete">5. Deleting your account</h2>
       <p>
         <!-- PF-25 -->
-        To delete your account, email
-        <a href="mailto:support@ogstyle.app?subject=Delete%20my%20account">support@ogstyle.app</a>
-        from any address, with the subject <strong>“Delete my account”</strong> and the mobile
-        number you sign in with. We may ask you to confirm the request from the app or by a code
-        sent to that number, so nobody else can delete your account.
+        In the app: <strong>Profile → Delete account</strong>. You are signed out on every
+        device straight away. If you change your mind, sign in again within <strong>30 days</strong>
+        and your account stays as it was.
       </p>
       <p>
         <!-- PF-25 -->
-        Within 7 working days we will close your account and sign you
-        out on every device. You will no longer be able to sign in with it.
+        After 30 days your name, email, photo and preferences are erased and the account is
+        closed. You will no longer be able to sign in with it.
+      </p>
+      <p>
+        <!-- PF-25 -->
+        Can't use the app? Email
+        <a href="mailto:support@ogstyle.app?subject=Delete%20my%20account">support@ogstyle.app</a>
+        with the subject <strong>“Delete my account”</strong> and the mobile number you sign in
+        with. We may ask you to confirm by a code sent to that number, so nobody else can delete
+        your account. See also <a href="../delete-account/">Delete your account</a>.
       </p>
       <p>
         <!-- PF-25 -->
         Your past bookings and payment records are kept as financial records for the period in
         section 4, then deleted. Bookings you have already paid for and not cancelled stay with
-        the shop. Cancel them first if you don't want to go.
+        the shop. Cancel them first if you don't want to go. If you own, manage or work at a shop
+        on OGSTYLE, hand that over (or contact us) before deleting your account.
         <!-- LAWYER: erasure right (DPDP s.12) vs. retention for tax law -
-             confirm this wording. -->
+             confirm this wording, and whether the phone number on a closed account must be
+             removed too. -->
       </p>
 
       <h2 id="rights">6. Your rights</h2>
