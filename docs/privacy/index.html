@@ -34,7 +34,7 @@
       <!-- DRAFT v1.1 (one version, owner 2026-11-24): Firebase sign-in (PF-24/PF-30)
            + profile photos (PF-20) + in-app deletion (PF-25) + walk-ins and counter
            payments (PF-31, Phase 16) + staff pay, expenses and cash counts in Day close
-           (PF-28). Publish with the app build that ships them; set the
+           (PF-28) + shop photos (PF-28, Phase 17). Publish with the app build that ships them; set the
            effective date that day, not before. -->
       <p class="meta">Version 1.1 · Effective <span class="fill">[EFFECTIVE DATE]</span></p>
 
@@ -175,6 +175,12 @@
           who made them and when.
         </li>
         <li>
+          <!-- PF-28: shop photos, services/shop-photos.ts (Phase 17) -->
+          Photos of the shop that an owner or manager adds in the app. Customers see them on the
+          shop's page, so a photo that shows you can be seen by anyone using OGSTYLE. Ask the
+          owner or manager to remove one; removing a photo deletes it from our storage.
+        </li>
+        <li>
           <!-- PF-28: Staff.sharePercent / Staff.shareDailyInPaise; Day close is REPORT_VIEW -->
           Your pay, if the shop records it when closing the day: either a share of your work (a
           percent) or a fixed amount per day, and the amount it works out you are owed each day.
@@ -250,7 +256,7 @@
           <!-- PF-30 -->
           <strong>Our hosting providers</strong> store and run the service: Render
           (application servers), Supabase (database, Mumbai region), Cloudflare (profile photos,
-          if you add one) and GitHub Pages (this website).
+          if you add one, and shop photos) and GitHub Pages (this website).
           <!-- PF-30: true of the dev server today. Revisit at the production
                decision (README blocker 9) and name what production uses. -->
         </li>
@@ -297,6 +303,10 @@
           <!-- PF-28 -->
           A shop's day-close records (staff pay settings, expenses and cash counts), for the same
           period as bookings. They are the shop's financial records.
+        </li>
+        <li>
+          <!-- PF-28 -->
+          Shop photos, until the shop removes them.
         </li>
         <li>
           <!-- PF-29: Render free plan, read by the owner 2026-11-10 (range
